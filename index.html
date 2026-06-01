@@ -14,148 +14,74 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-/* =====================
-   GLOBAL
-===================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: #070a12;
     color: white;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* =====================
-   CRT SCANLINES
-===================== */
-.scanlines {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.02),
-        rgba(255,255,255,0.02) 1px,
-        transparent 2px,
-        transparent 4px
-    );
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: overlay;
-}
-
-/* =====================
-   PARTICLES
-===================== */
-#particles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-/* =====================
-   NAVBAR
-===================== */
+/* NAV */
 nav {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
+    background: rgba(10,10,20,0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: rgba(10, 10, 20, 0.7);
-    backdrop-filter: blur(10px);
+    padding: 15px 25px;
     border-bottom: 1px solid #222;
     z-index: 1000;
 }
 
 .logo {
-    font-weight: bold;
     color: #a855f7;
+    font-weight: bold;
     letter-spacing: 2px;
 }
 
-.logo span {
-    color: white;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
+nav a {
     color: white;
     text-decoration: none;
-    transition: 0.3s;
+    margin-left: 15px;
 }
 
-.nav-links a:hover {
+nav a:hover {
     color: #a855f7;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 4px 0;
-}
-
-/* =====================
-   HERO
-===================== */
+/* HERO */
 .hero {
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top, #1b1030, #070a12);
-    z-index: -1;
+    padding: 20px;
+    background: radial-gradient(circle at top, #1a1030, #070a12);
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 55px;
     color: #a855f7;
 }
 
 .hero p {
-    margin-top: 15px;
-    opacity: 0.8;
-    max-width: 600px;
+    max-width: 700px;
+    opacity: 0.85;
 }
 
 .btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 22px;
     background: #a855f7;
     color: white;
-    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -164,28 +90,39 @@ nav {
     background: #9333ea;
 }
 
-/* =====================
-   SECTIONS
-===================== */
+/* SECTIONS */
 section {
     padding: 80px 20px;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
 }
 
-.title {
-    font-size: 32px;
-    margin-bottom: 20px;
+h2 {
     color: #a855f7;
+    margin-bottom: 15px;
 }
 
-/* =====================
-   GRID
-===================== */
+/* RULES */
+.rule {
+    background: #111827;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #222;
+}
+
+.rule p {
+    display: none;
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 15px;
 }
 
 .card {
@@ -193,224 +130,147 @@ section {
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #222;
-    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #a855f7;
-}
-
-/* =====================
-   RULES
-===================== */
-.rule {
-    background: #111827;
-    margin-bottom: 10px;
-    padding: 15px;
+/* DIRECTORY */
+pre {
+    background: #0f172a;
+    padding: 20px;
     border-radius: 10px;
-    cursor: pointer;
+    overflow-x: auto;
     border: 1px solid #222;
 }
 
-.rule-title {
-    display: flex;
-    justify-content: space-between;
+/* SOCIALS */
+.social a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
 }
 
-/* =====================
-   FOOTER
-===================== */
+.social a:hover {
+    color: #a855f7;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
     border-top: 1px solid #222;
     color: #aaa;
 }
-
-/* =====================
-   MOBILE
-===================== */
-@media(max-width:768px){
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #111827;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        padding: 15px;
-        border-radius: 10px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<div class="scanlines"></div>
-<canvas id="particles"></canvas>
-
-<!-- NAV -->
 <nav>
-    <div class="logo">THE DIGITAL <span>DEN</span></div>
-
-    <div class="nav-links" id="navLinks">
+    <div class="logo">THE DIGITAL DEN</div>
+    <div>
         <a href="#about">About</a>
-        <a href="#features">Features</a>
         <a href="#rules">Rules</a>
-        <a href="#join">Join</a>
-    </div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+        <a href="#worlds">Worlds</a>
+        <a href="#team">Team</a>
+        <a href="#socials">Socials</a>
     </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
     <div>
         <h1>The Digital Den</h1>
-        <p>A VRChat community built on safety, respect, and good vibes. Hang out, join events, and meet new people.</p>
-        <button class="btn" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">
-            Join Now
-        </button>
+        <p>
+            A community built on safety, respect, and good vibes. We offer a moderated space for socializing, support, events, and structured staff systems.
+        </p>
+
+        <a class="btn" href="https://discord.gg/VNXgu5dKVx" target="_blank">
+            Join Discord
+        </a>
+
+        <a class="btn" href="https://vrc.group/TDD.5320" target="_blank">
+            VRChat Group
+        </a>
     </div>
-</section>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
-    <div class="title">About</div>
+    <h2>About The Digital Den</h2>
     <p>
-        The Digital Den is a structured VRChat community focused on creating a safe, fun, and respectful environment for everyone.
+        The Digital Den is a community built on safety, respect, and good vibes. We offer a moderated space for socializing, support, events, and structured staff systems with clear rules and accountability to keep the community safe and welcoming.
     </p>
-</section>
-
-<!-- FEATURES -->
-<section id="features">
-    <div class="title">Features</div>
-    <div class="grid">
-        <div class="card">🎮 Events & Game Nights</div>
-        <div class="card">🤝 Social Hangouts</div>
-        <div class="card">🛡️ Safe Moderation</div>
-        <div class="card">🎥 Content Creation</div>
-    </div>
 </section>
 
 <!-- RULES -->
 <section id="rules">
-    <div class="title">Rules</div>
+    <h2>Community Rules</h2>
 
-    <div class="rule" onclick="toggleRule(this)">
-        <div class="rule-title">Respect Everyone <span>+</span></div>
-        <p style="display:none; margin-top:10px;">No harassment, discrimination, or toxic behavior allowed.</p>
-    </div>
+    <div class="rule"><b>Age Verification</b><p>18+ community. Verification may be required for events.</p></div>
+    <div class="rule"><b>No NSFW Content</b><p>No NSFW avatars, behavior, or language in public spaces.</p></div>
+    <div class="rule"><b>Respect All Members</b><p>No harassment, bullying, or discrimination allowed.</p></div>
+    <div class="rule"><b>No Spam or Trolling</b><p>Keep interactions clean and respectful.</p></div>
+    <div class="rule"><b>Follow Staff</b><p>Staff decisions help maintain safety and structure.</p></div>
+    <div class="rule"><b>No Advertising</b><p>No self-promotion without permission.</p></div>
+</section>
 
-    <div class="rule" onclick="toggleRule(this)">
-        <div class="rule-title">No NSFW Content <span>+</span></div>
-        <p style="display:none; margin-top:10px;">Keep all public spaces appropriate at all times.</p>
-    </div>
-
-    <div class="rule" onclick="toggleRule(this)">
-        <div class="rule-title">Follow Staff <span>+</span></div>
-        <p style="display:none; margin-top:10px;">Staff decisions help keep the community safe and organized.</p>
+<!-- WORLDS -->
+<section id="worlds">
+    <h2>Worlds We Host In</h2>
+    <div class="card">
+        Sunset Bar, Just B Club, Black Cat, Opti Box, various game worlds, and a custom world coming soon.
     </div>
 </section>
 
-<!-- JOIN -->
-<section id="join">
-    <div class="title">Join Us</div>
-    <p>Become part of The Digital Den today.</p>
+<!-- TEAM -->
+<section id="team">
+    <h2>The Digital Den Directory</h2>
 
-    <br>
+    <pre>
+Ownership Team
+Owner – @.crypted.
+Co-Owner – @thinkintokyo
 
-    <a href="https://discord.gg/VNXgu5dKVx" target="_blank">
-        <button class="btn"><i class="fab fa-discord"></i> Discord</button>
-    </a>
+Management
+Community Operations – @yukito_vr
+Community Development – Vacant
+EU Operations Manager – Vacant
 
-    <a href="https://vrc.group/TDD.5320" target="_blank">
-        <button class="btn">VRChat Group</button>
-    </a>
+Staff Leadership
+Staff Director – Vacant
+Head Of Staff – @a_moon_pie
+Senior Admin – @woufavali
+Admin – @shadowedspade13
+Admin – Vacant
+Admin – Vacant
+
+This is updated every Friday.
+    </pre>
 </section>
 
-<!-- FOOTER -->
+<!-- SOCIALS -->
+<section id="socials">
+    <h2>Official Socials</h2>
+
+    <div class="social">
+        <a href="https://tiktok.com/@digitaldenvrc" target="_blank">📱 TikTok</a>
+        <a href="https://www.youtube.com/@DigitalDenVRC" target="_blank">▶ YouTube</a>
+        <a href="https://linktr.ee/TheDigitalDenVRC" target="_blank">🌐 Linktree</a>
+        <a href="mailto:TheDigitalDenVRC@gmail.com">📧 Email</a>
+    </div>
+</section>
+
 <footer>
-    © 2026 The Digital Den • Built with community focus
+    © 2026 The Digital Den • Built for VRChat community experience
 </footer>
 
 <script>
-/* =====================
-   MOBILE MENU
-===================== */
-function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("active");
-}
-
-/* =====================
-   RULE TOGGLE
-===================== */
-function toggleRule(el){
-    let p = el.querySelector("p");
-    p.style.display = (p.style.display === "block") ? "none" : "block";
-}
-
-/* =====================
-   PARTICLES
-===================== */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-    particles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*2,
-        dx: (Math.random()-0.5),
-        dy: (Math.random()-0.5)
+// toggle rules
+document.querySelectorAll(".rule").forEach(r => {
+    r.addEventListener("click", () => {
+        let p = r.querySelector("p");
+        p.style.display = (p.style.display === "block") ? "none" : "block";
     });
-}
-
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#a855f7";
-
-    particles.forEach(p=>{
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if(p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if(p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fill();
-    });
-
-    requestAnimationFrame(animate);
-}
-animate();
-
-window.addEventListener("resize",()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 });
 </script>
 
