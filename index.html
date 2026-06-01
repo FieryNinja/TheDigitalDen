@@ -1,443 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Digital Den | VRChat Community</title>
-    <meta name="description" content="The Digital Den is a community built on safety, respect, and good vibes. A moderated VRChat space for socializing, support, events, and structured staff systems.">
-    <meta name="theme-color" content="#a855f7">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="The Digital Den | VRChat Community">
-    <meta property="og:description" content="A community built on safety, respect, and good vibes. Join us in VRChat!">
-    <meta property="og:image" content="images/banner.png">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon (data URI - small pixel) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Digital Den</title>
+  <meta name="description" content="The Digital Den - A VRChat community built for events, worlds, and social gaming." />
+
+  <!--
+    BASE FIX:
+    Forces ALL relative paths to resolve correctly on GitHub Pages
+  -->
+  <base href="./" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Optional font (safe external CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <!-- Scanlines overlay for CRT effect -->
-    <div class="scanlines"></div>
-    
-    <!-- Particles canvas -->
-    <canvas id="particles-canvas"></canvas>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="#" class="nav-logo">TDD<span>.VR</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#rules">Rules</a></li>
-            <li><a href="#worlds">Worlds</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#socials">Socials</a></li>
-            <li><a href="https://discord.gg/VNXgu5dKVx" target="_blank" class="nav-join">Join Us</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">TDD.VR</div>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#rules">Rules</a>
+      <a href="#worlds">Worlds</a>
+      <a href="#team">Team</a>
+      <a href="https://discord.gg/" target="_blank">Discord</a>
     </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <img src="images/hero-bg.jpg" alt="" class="hero-bg">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img src="images/banner.png" alt="The Digital Den" class="hero-banner">
-            <p class="hero-subtitle">// VRChat Community</p>
-            <p class="hero-tagline">
-                A community built on <strong>safety</strong>, <strong>respect</strong>, and <strong>good vibes</strong>. We offer a moderated space for socializing, support, events, and structured staff systems with clear rules and accountability.
-            </p>
-            <div class="hero-buttons">
-                <a href="https://discord.gg/VNXgu5dKVx" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-discord"></i> Join Discord
-                </a>
-                <a href="https://vrc.group/TDD.5320" target="_blank" class="btn btn-secondary">
-                    <i class="fas fa-vr-cardboard"></i> VRChat Group
-                </a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="section-header fade-in">
-            <span class="section-label">// Who We Are</span>
-            <h2 class="section-title">About The Digital Den</h2>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="about-grid">
-            <div class="about-text fade-in-left">
-                <p>
-                    The Digital Den is more than just a VRChat group — it's a <strong>safe haven</strong> in the virtual world. Founded on the principles of safety, respect, and community, we've built a space where everyone can feel welcome and protected.
-                </p>
-                <br>
-                <p>
-                    Our structured staff system ensures <strong>clear rules and accountability</strong>, so you can focus on what matters: having fun, meeting new people, and enjoying everything VRChat has to offer. From casual hangouts to organized events, we've created an environment where <strong>good vibes aren't just encouraged — they're the standard</strong>.
-                </p>
-                <br>
-                <p>
-                    Whether you're a VRChat veteran or just getting started, The Digital Den is your home base. We're an <strong>18+ community</strong> that takes safety seriously while keeping things fun and engaging for all our members.
-                </p>
-            </div>
-            <div class="about-features fade-in-right">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Safety First</h3>
-                    <p>Moderated spaces with active staff to keep the community secure</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Respect Driven</h3>
-                    <p>Zero tolerance for harassment, bullying, or discrimination</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎉</div>
-                    <h3>Events & Activities</h3>
-                    <p>Regular community events, game nights, and social gatherings</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h3>Accountability</h3>
-                    <p>Structured staff system with clear rules and transparent processes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Rules Section -->
-    <section class="section" id="rules" style="background: linear-gradient(180deg, transparent, rgba(168,85,247,0.03), transparent);">
-        <div class="section-header fade-in">
-            <span class="section-label">// Our Guidelines</span>
-            <h2 class="section-title">Community Rules</h2>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="rules-container fade-in">
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">01</span>
-                    <span class="rule-title">Age Verification</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>This is an 18+ community. Age verification may be required to access certain areas or participate in events. Please be prepared to verify your age if requested.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">02</span>
-                    <span class="rule-title">No NSFW Content</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>Keep all interactions and content appropriate. This includes avatars, language, and behavior. We are a strictly 18+ community, but NSFW content is not allowed in public spaces.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">03</span>
-                    <span class="rule-title">Respect All Members</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>Treat everyone with kindness and respect. Harassment, bullying, or discrimination of any kind will not be tolerated.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">04</span>
-                    <span class="rule-title">No Spamming or Trolling</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>Avoid spamming, trolling, or any disruptive behavior that may affect others' enjoyment of the space.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">05</span>
-                    <span class="rule-title">Event Conduct</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>During events or group activities, refrain from using soundboards or voice changers unless explicitly allowed. This ensures everyone can enjoy the event without distractions.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">06</span>
-                    <span class="rule-title">Use Appropriate Avatars</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>Please use avatars that are respectful and not overly provocative. Avatars that are offensive, overly revealing, or disruptive may lead to a warning or removal.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">07</span>
-                    <span class="rule-title">Follow Staff Instructions</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>Our staff members are here to maintain a safe environment. Please follow their guidance and cooperate if asked to adjust your behavior or avatar.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">08</span>
-                    <span class="rule-title">No Advertising or Self-Promotion</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>Avoid promoting your own events, groups, or social media channels without permission from the ownership team.</p>
-                </div>
-            </div>
-            
-            <div class="rule-item">
-                <div class="rule-header">
-                    <span class="rule-number">09</span>
-                    <span class="rule-title">Reporting Issues</span>
-                    <span class="rule-toggle">▼</span>
-                </div>
-                <div class="rule-body">
-                    <p>If you encounter any problems or see someone breaking the rules, please report it to our staff. You can do so via our Discord server's support channels or in-world moderation requests.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Worlds Section -->
-    <section class="section" id="worlds">
-        <div class="section-header fade-in">
-            <span class="section-label">// Where We Hang Out</span>
-            <h2 class="section-title">Our Worlds</h2>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="worlds-grid">
-            <div class="world-card fade-in">
-                <span class="world-icon">🌅</span>
-                <h3>Sunset Bar</h3>
-                <p>Relax and unwind at our signature hangout spot with stunning sunset views and great company.</p>
-                <span class="world-badge badge-active">Active</span>
-            </div>
-            
-            <div class="world-card fade-in">
-                <span class="world-icon">🎵</span>
-                <h3>Just B Club</h3>
-                <p>The party never stops at Just B Club — music, dancing, and good vibes all around.</p>
-                <span class="world-badge badge-active">Active</span>
-            </div>
-            
-            <div class="world-card fade-in">
-                <span class="world-icon">🐱</span>
-                <h3>Black Cat</h3>
-                <p>A cozy, intimate space for conversation and connection in the iconic Black Cat world.</p>
-                <span class="world-badge badge-active">Active</span>
-            </div>
-            
-            <div class="world-card fade-in">
-                <span class="world-icon">⚙️</span>
-                <h3>Opti Box</h3>
-                <p>Optimized for performance — perfect for larger gatherings and lag-free fun.</p>
-                <span class="world-badge badge-active">Active</span>
-            </div>
-            
-            <div class="world-card fade-in">
-                <span class="world-icon">🎮</span>
-                <h3>Game Worlds</h3>
-                <p>A variety of un-named game worlds for competitive and cooperative play with the community.</p>
-                <span class="world-badge badge-active">Active</span>
-            </div>
-            
-            <div class="world-card fade-in">
-                <span class="world-icon">🚧</span>
-                <h3>Custom World</h3>
-                <p>Something special is in the works. Our very own custom-built world designed by and for The Digital Den.</p>
-                <span class="world-badge badge-pending">Coming Soon</span>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Team Section -->
-    <section class="section" id="team" style="background: linear-gradient(180deg, transparent, rgba(6,182,212,0.03), transparent);">
-        <div class="section-header fade-in">
-            <span class="section-label">// The People Behind TDD</span>
-            <h2 class="section-title">Our Team</h2>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="team-section fade-in">
-            <!-- Ownership -->
-            <div class="team-group">
-                <h3 class="team-group-title">Ownership Team</h3>
-                <div class="team-member">
-                    <div class="team-avatar avatar-owner">O</div>
-                    <span class="team-role">Owner</span>
-                    <span class="team-name">.crypted.</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-coowner">CO</div>
-                    <span class="team-role">Co-Owner</span>
-                    <span class="team-name">thinkintokyo</span>
-                </div>
-            </div>
-            
-            <!-- Management -->
-            <div class="team-group">
-                <h3 class="team-group-title">Management</h3>
-                <div class="team-member">
-                    <div class="team-avatar avatar-management">M</div>
-                    <span class="team-role">Community Operations</span>
-                    <span class="team-name">yukito_vr</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-vacant">—</div>
-                    <span class="team-role">Community Development</span>
-                    <span class="team-name vacant">Vacant</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-vacant">—</div>
-                    <span class="team-role">EU Operations Manager</span>
-                    <span class="team-name vacant">Vacant</span>
-                </div>
-            </div>
-            
-            <!-- Staff Leadership -->
-            <div class="team-group">
-                <h3 class="team-group-title">Staff Leadership</h3>
-                <div class="team-member">
-                    <div class="team-avatar avatar-vacant">—</div>
-                    <span class="team-role">Staff Director</span>
-                    <span class="team-name vacant">Vacant</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-staff">HS</div>
-                    <span class="team-role">Head Of Staff</span>
-                    <span class="team-name">a_moon_pie</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-staff">SA</div>
-                    <span class="team-role">Senior Admin</span>
-                    <span class="team-name">woufavali</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-staff">A</div>
-                    <span class="team-role">Admin</span>
-                    <span class="team-name">shadowedspade13</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-vacant">—</div>
-                    <span class="team-role">Admin</span>
-                    <span class="team-name vacant">Vacant</span>
-                </div>
-                <div class="team-member">
-                    <div class="team-avatar avatar-vacant">—</div>
-                    <span class="team-role">Admin</span>
-                    <span class="team-name vacant">Vacant</span>
-                </div>
-            </div>
-            
-            <p class="team-update-note">// Directory updated every Friday</p>
-        </div>
-    </section>
-    
-    <!-- Socials Section -->
-    <section class="section" id="socials">
-        <div class="section-header fade-in">
-            <span class="section-label">// Stay Connected</span>
-            <h2 class="section-title">Our Socials</h2>
-            <div class="section-divider"></div>
-        </div>
-        
-        <div class="socials-grid fade-in">
-            <a href="https://tiktok.com/@digitaldenvrc" target="_blank" class="social-card">
-                <div class="social-icon tiktok"><i class="fab fa-tiktok"></i></div>
-                <div class="social-info">
-                    <h3>TikTok</h3>
-                    <p>@digitaldenvrc</p>
-                </div>
-            </a>
-            
-            <a href="https://www.youtube.com/@DigitalDenVRC" target="_blank" class="social-card">
-                <div class="social-icon youtube"><i class="fab fa-youtube"></i></div>
-                <div class="social-info">
-                    <h3>YouTube</h3>
-                    <p>@DigitalDenVRC</p>
-                </div>
-            </a>
-            
-            <a href="https://linktr.ee/TheDigitalDenVRC" target="_blank" class="social-card">
-                <div class="social-icon linktree"><i class="fas fa-link"></i></div>
-                <div class="social-info">
-                    <h3>Linktree</h3>
-                    <p>TheDigitalDenVRC</p>
-                </div>
-            </a>
-            
-            <a href="mailto:TheDigitalDenVRC@gmail.com" class="social-card">
-                <div class="social-icon email"><i class="fas fa-envelope"></i></div>
-                <div class="social-info">
-                    <h3>Contact Us</h3>
-                    <p>TheDigitalDenVRC@gmail.com</p>
-                </div>
-            </a>
-        </div>
-    </section>
-    
-    <!-- Join CTA Section -->
-    <section class="join-section" id="join">
-        <div class="join-content fade-in">
-            <h2>Ready To Join The Den?</h2>
-            <p>Step into a community where your safety matters, your voice is heard, and good vibes are guaranteed. Whether you're looking for chill hangouts, exciting events, or just a place to call home in VRChat — The Digital Den is waiting for you.</p>
-            <div class="join-buttons">
-                <a href="https://discord.gg/VNXgu5dKVx" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-discord"></i> Join Our Discord
-                </a>
-                <a href="https://vrc.group/TDD.5320" target="_blank" class="btn btn-secondary">
-                    <i class="fas fa-vr-cardboard"></i> Join VRChat Group
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">THE DIGITAL <span>DEN</span></div>
-            <div class="footer-text">A VRChat Community Built on Safety & Respect</div>
-            <div class="footer-links">
-                <a href="https://discord.gg/VNXgu5dKVx" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-                <a href="https://vrc.group/TDD.5320" target="_blank" aria-label="VRChat"><i class="fas fa-vr-cardboard"></i></a>
-                <a href="https://tiktok.com/@digitaldenvrc" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/@DigitalDenVRC" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2024 The Digital Den &mdash; All Rights Reserved &mdash; Built with 💜
-        </div>
-    </footer>
-    
-    <script src="js/main.js"></script>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <img src="./images/hero-bg.jpg" alt="Hero Background" class="hero-bg" />
+
+    <div class="hero-content">
+      <h1>The Digital Den</h1>
+      <p>A VRChat community built for events, worlds, and connection.</p>
+
+      <div class="hero-buttons">
+        <a href="https://discord.gg/" class="btn primary" target="_blank">Join Discord</a>
+        <a href="https://vrchat.com/home/group/" class="btn secondary" target="_blank">VRChat Group</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>
+      The Digital Den is a VRChat community focused on creating a safe, fun,
+      and active space for social events, world exploration, and gaming sessions.
+    </p>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="section">
+    <h2>Rules</h2>
+
+    <div class="card">
+      <h3>1. Respect Everyone</h3>
+      <p>No harassment, hate speech, or toxic behavior.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. No Spamming</h3>
+      <p>Keep chat and voice channels clean and organized.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Follow VRChat TOS</h3>
+      <p>All VRChat rules must be respected at all times.</p>
+    </div>
+  </section>
+
+  <!-- WORLDS -->
+  <section id="worlds" class="section">
+    <h2>Featured Worlds</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Main Hangout</h3>
+        <p>Our primary social space for events and meetups.</p>
+      </div>
+
+      <div class="card">
+        <h3>Event World</h3>
+        <p>Used for concerts, game nights, and community events.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="section">
+    <h2>Staff Team</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Founder</h3>
+        <p>Your Name</p>
+      </div>
+
+      <div class="card">
+        <h3>Moderators</h3>
+        <p>Community Moderation Team</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 The Digital Den. All rights reserved.</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
+
 </body>
 </html>
